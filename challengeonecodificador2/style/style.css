@@ -1,75 +1,57 @@
+* {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+}
+
 body {
-    /* Encriptador - 1 Desktop */
     position: relative;
-    width: 1440px;
-    height: 1024px;
+    width: 375px;
+    height: 933px;
     background: #F3F5FC;
 }
 
-qheader {
-    /* Menu */
-
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 10px;
-
-    display: none;
-    width: 120px;
-    height: 176px;
-
-    background: rgba(255, 255, 255, 0.24);
-    border-radius: 800px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
+header {
+    position: absolute;
+    width: 375px;
+    height: 96px;
+    left: 0px;
+    top: 0px;
 }
 
-qimg-logo {
-    /* Logo */
+.img-logo {
+    position: absolute;
+    left: 4.27%;
+    right: 87.2%;
+    top: 25%;
+    bottom: 25%;
+}
+
+.rectangulo {
+    /* Frame 5 */
+
+
     /* Auto layout */
 
-    display: flex;
+/*     display: flex; */
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
+    padding: 32px;
+    gap: 32px;
 
     position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 40px;
-    top: 40px;
+/*     width: 327px;
+    height: 186px; */
+    left: 24px;
+    top: 707px;
+
+    /* White */
+
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
 }
 
-qrectangulo {
-    /* Rectangle 1 */
-
-
-position: absolute;
-width: 400px;
-height: 944px;
-left: 1000px;
-top: 40px;
-
-/* White */
-
-background: #FFFFFF;
-/* shadow */
-
-box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-border-radius: 32px;
-}
-
-qno-encontrado {
+.caja-no-encontrado {
     /* Frame 5 */
 
 
@@ -81,33 +63,8 @@ qno-encontrado {
     padding: 0px;
     gap: 16px;
 
-    position: absolute;
-    width: 336px;
+    width: 263px;
     height: 122px;
-    left: 1032px;
-    top: 619px;
-
-}
-
-qtxt-salida {
-    /* Ningún mensaje fue encontrado */
-
-
-    width: 336px;
-    height: 58px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-    /* or 29px */
-
-    text-align: center;
-
-    /* Gray/gray-500 */
-
-    color: #343A40;
 
 
     /* Inside auto layout */
@@ -118,15 +75,42 @@ qtxt-salida {
     flex-grow: 0;
 }
 
-qparrafo-munieco {
+.txt-salida {
+    /* Ningún mensaje fue encontrado */
+
+
+    width: 263px;
+    height: 58px;
+    resize: none;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+
+    text-align: center;
+
+    /* Gray/gray-500 */
+
+    color: #343A40;
+    background: none;
+    border: none;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.parrafo-munieco {
     /* Ingresa el texto que desees encriptar o desencriptar. */
 
 
-    width: 336px;
+    width: 263px;
     height: 48px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -147,144 +131,86 @@ qparrafo-munieco {
     flex-grow: 0;
 }
 
-qimg-munieco {
-    /* Muñeco */
-
-
-    position: absolute;
-    width: 336px;
-    height: 304px;
-    left: 1032px;
-    top: 283px;
+.img-munieco {
+    display: none;
 }
 
-qaviso {
-    /* Frame 1 */
-
-
-    /* Auto layout */
-
+.caja-aviso {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-
     position: absolute;
     width: 229px;
     height: 18px;
-    left: 240px;
-    top: 851px;
+    left: 16px;
+    top: 451px;
+    }
 
-}
-
-qimg-exclamacion {
-    /* bi:exclamation-circle-fill */
-
-
+.img-exclamacion {
     width: 16px;
     height: 16px;
-
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
 }
 
-qtxt-aviso {
-    /* Solo letras minúsculas y sin acentos */
-
-
+.txt-aviso {
     width: 205px;
     height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    /* identical to box height, or 18px */
-
-
-    /* Gray/gray-400 */
-
     color: #495057;
-
-    opacity: 0.8;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
 }
 
-qbotones {
-    /* Frame 3 */
-
-
-    /* Auto layout */
-
+.caja-botones {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
 
     position: absolute;
-    width: 680px;
-    height: 67px;
-    left: 240px;
-    top: 885px;
+    width: 343px;
+    height: 158px;
+    left: 16px;
+    top: 485px;
 }
 
-qbtn-encriptar {
-    /* Button */
-
-
-    /* Auto layout */
-
-    display: flex;
+.btn-encriptar {
+/* display: flex; */
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
 
-    width: 328px;
+   /*  width: 100%; */
     height: 67px;
-
     /* Dark blue/dark-blue-300 */
-
     background: #0A3871;
     border-radius: 24px;
-
     /* Inside auto layout */
-
     flex: none;
     order: 0;
+    align-self: stretch;
     flex-grow: 0;
-
-
     /* Button */
 
-
-    width: 280px;
+ /*    width: 295px; */
     height: 19px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
 
     /* White */
-
     color: #FFFFFF;
-
-
     /* Inside auto layout */
 
     flex: none;
@@ -292,45 +218,31 @@ qbtn-encriptar {
     flex-grow: 1;
 }
 
-qbtn-desencriptar {
+.btn-desencriptar {
     /* Button */
-
-
     box-sizing: border-box;
-
     /* Auto layout */
-
-    display: flex;
+/*     display: flex; */
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
-
-    width: 328px;
+/*     width: 343px; */
     height: 67px;
-
-    /* Light gray */
-
-    background: #D8DFE8;
-    /* Dark blue/dark-blue-300 */
-
+   /* Dark blue/dark-blue-300 */
     border: 1px solid #0A3871;
     border-radius: 24px;
-
     /* Inside auto layout */
-
     flex: none;
     order: 1;
+    align-self: stretch;
     flex-grow: 0;
-
     /* Button */
 
 
-    width: 280px;
+/*     width: 295px; */
     height: 19px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -348,27 +260,43 @@ qbtn-desencriptar {
     flex-grow: 1;
 }
 
-qtxt-entrada { 
-    /* Ingrese el texto aqui */
-
-
+.txt-entrada { 
     position: absolute;
-    width: 577px;
-    height: 48px;
-    left: 240px;
-    top: 168px;
-
-    font-family: 'Inter';
-    font-style: normal;
+    width: 343px;
+    height: 280px;
+    left: 16px;
+    top: 152px;
+    resize: none;
+    background: none;
+    border: none;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
-    /* identical to box height, or 48px */
-
-
-    /* Dark blue/dark-blue-300 */
-
     color: #0A3871;
-
 }
 
+.txt-entrada::placeholder {
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    line-height: 150%;
+    color: #0A3871;
+}
+
+.btn-copiar {
+    display: none;
+}
+
+footer {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #343A40;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

@@ -5,55 +5,59 @@ document.querySelector(".btn-desencriptar").onclick = function() {botonDesencrip
 document.querySelector(".btn-copiar").onclick = function() {botonCopiar()};
 // encriptar.addEventListener( 'click', function() {botonEncriptar();} );
 
-
-// FUNCIÓN VALIDACIÓN
-function esValido(c) {
-  c = c.charCodeAt(0);
-  return (c >= 97 && c <= 122) || (c == 32); // [a-z ]
-}
-
-function validarEntrada(cadena) {
-  for (var i = 0; i < cadena.length; i++) {
-    if (!esValido(cadena[i])) {
-      break;
-    }
+// FUNCIÓN VALIDAR ENTRADA
+function validarEntrada(texto) {
+  var e = true;
+  var reg = /[^a-zA-Z,¡!¿?0-9 ]/g;
+  if(texto <= 0) {
+    alert("Ingrese algún texto antes de continuar");   
+    e = false;
+  } else if (!reg.test(texto)) {
+    return true;
+  } else {
+    alert("Caracteres especiales no están permitidos");
+    return false;
   }
-  return i == cadena.length;
-}
-// BOTÓN ENCRIPTAR
-function botonEncriptar() {
-    const textoEncriptado = encriptar(textoEntrada.value);
-    textoSalida.value = textoEncriptado;
+  return e;
 }
 
-function encriptar(textoParaEncriptar){
-  let  encriptacion = [["e", "enter"], ["i", "imes"], ["a", "ai"],["o", "ober"],["u", "ufat"]]
+// FUNCIÓN BOTÓN ENCRIPTAR
+function botonEncriptar() {
+  if(validarEntrada(textoEntrada.value)) {
+    const textoEncriptado = encriptar(textoEntrada.value);
+      textoSalida.value = textoEncriptado; 
+      textoEntrada.value = null;
+  }
+}
+
+// FUNCIÓN ENCRIPTACIÓN
+function encriptar(textoParaEncriptar) {
+  let  encriptacion = [["e", "enter"], ["i", "imes"], ["a", "ai"],["o", "ober"],["u", "ufat"]];
   textoParaEncriptar = textoParaEncriptar.toLowerCase();
   for (let i= 0; i< encriptacion.length; i++){
-    if(validarEntrada(encriptacion[i])){
-      alert("Solo ingresar mun");
-      return;  
-    } else if(textoParaEncriptar.includes(encriptacion[i][0])){
-      textoParaEncriptar = textoParaEncriptar.replaceAll(encriptacion[i][0],
-        encriptacion[i][1])
-    } return textoParaEncriptar;
+    if(textoParaEncriptar.includes(encriptacion[i][0])){
+      textoParaEncriptar = textoParaEncriptar.replaceAll(encriptacion[i][0], encriptacion[i][1])
+    } 
   }
-   
+  return textoParaEncriptar;
 }
 
 // BOTÓN DESENCRIPTAR
 function botonDesencriptar() {
+  if(validarEntrada(textoEntrada.value)) {
     const textoDesencriptado = desencriptar(textoEntrada.value);
-    textoSalida.value = textoDesencriptado;
+      textoSalida.value = textoDesencriptado; 
+      textoEntrada.value = null;
+  }
 }
 
-function desencriptar(textoParaDesencriptar){
-  let  encriptacion = [["enter", "e"], ["imes", "i"], ["ai", "a"],["ober", "o"],["ufat", "u"]]
+// FUNCIÓN DESENCRIPTACIÓN
+function desencriptar(textoParaDesencriptar) {
+  let  encriptacion = [["enter", "e"], ["imes", "i"], ["ai", "a"],["ober", "o"],["ufat", "u"]];
   textoParaDesencriptar = textoParaDesencriptar.toLowerCase();
-  for (let i= 0; i< encriptacion.length; i++){
-      if(textoParaDesencriptar.includes(encriptacion[i][0])){
-        textoParaDesencriptar = textoParaDesencriptar.replaceAll(encriptacion[i][0],
-          encriptacion[i][1])
+  for (let i= 0; i< encriptacion.length; i++) {
+      if(textoParaDesencriptar.includes(encriptacion[i][0])) {
+        textoParaDesencriptar = textoParaDesencriptar.replaceAll(encriptacion[i][0], encriptacion[i][1])
       }
   }
   return textoParaDesencriptar; 
@@ -64,62 +68,6 @@ const copiar = navigator.clipboard
 function botonCopiar() {
   if (copiar) {
     copiar.writeText(textoSalida.value)
-      .then(() => alert('copiado'))
+      .then(() => alert("Mensaje copiado"))
   }
 }
-
-
-/* // VALIDAR ENTRADA
-function esValido(c) {
-    c = c.charCodeAt(0);
-    return (c >= 97 && c <= 122) || (c == 32); // [a-z ]
-  }
-  
-
-  function validarEntrada(cadena) {
-    for (var i = 0; i < cadena.length; i++) {
-      if (!esValido(cadena[i])) {
-        break;
-      }
-    }
-    return i == cadena.length;
-  } */
-
-  /* function textoInvalido(evento) {
-    let textoEntrada = cadena;
-    const cadena = evento.cadena;
-    
-    for(var i = 0; i < cadena.length; i++) {
-        if (i < 97 || i > 122 || i == 32) {
-            evento.preventDefault();
-            alert("Solo letras minúsculas y sin acentos." + "\n"
-                + "codigo: " + codigo + "\n");
-                break;
-        }
-    }
-} */
-
-/*       if (codigo != 0) {
-        if (codigo < 97 || codigo > 122 || codigo == 32) {
-          evento.preventDefault();
-          alert("Solo letras minúsculas y sin acentos." + "\n"
-                + "codigo: " + codigo + "\n"
-          );
-        }
-      }
-    }
-
-function textoInvalido(evento) {
-    const codigo = evento.codigo;
-    
-    }
-      if (codigo != 0) {
-        if (codigo < 97 || codigo > 122 || codigo == 32) {
-          evento.preventDefault();
-          alert("Solo letras minúsculas y sin acentos." + "\n"
-                + "codigo: " + codigo + "\n"
-          );
-        }
-      }
-    }
- */
