@@ -27,6 +27,9 @@ function botonEncriptar() {
     const textoEncriptado = encriptar(textoEntrada.value);
       textoSalida.value = textoEncriptado; 
       textoEntrada.value = null;
+      document.querySelector(".parrafo-munieco").style.display = "none";
+      document.querySelector(".img-munieco").style.display = "none";
+      document.querySelector(".btn-copiar").style.display = "revert";
   }
 }
 
@@ -48,6 +51,9 @@ function botonDesencriptar() {
     const textoDesencriptado = desencriptar(textoEntrada.value);
       textoSalida.value = textoDesencriptado; 
       textoEntrada.value = null;
+      document.querySelector(".parrafo-munieco").style.display = "none";
+      document.querySelector(".img-munieco").style.display = "none";
+      document.querySelector(".btn-copiar").style.display = "revert";
   }
 }
 
