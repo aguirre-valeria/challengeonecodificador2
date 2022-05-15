@@ -30,6 +30,7 @@ function botonEncriptar() {
       document.querySelector(".parrafo-munieco").style.display = "none";
       document.querySelector(".img-munieco").style.display = "none";
       document.querySelector(".btn-copiar").style.display = "revert";
+      document.querySelector(".txt-salida").style.fontWeight = "400";
   }
 }
 
@@ -54,6 +55,7 @@ function botonDesencriptar() {
       document.querySelector(".parrafo-munieco").style.display = "none";
       document.querySelector(".img-munieco").style.display = "none";
       document.querySelector(".btn-copiar").style.display = "revert";
+      document.querySelector(".txt-salida").style.fontWeight = "400";
   }
 }
 
@@ -77,3 +79,12 @@ function botonCopiar() {
       .then(() => alert("Mensaje copiado"))
   }
 }
+
+// TEXTO ENTRADA SE AMPLÍE
+textarea = document.querySelector(".txt-entrada");
+  textarea.addEventListener('input', autoResize, false);
+      
+    function autoResize() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    }

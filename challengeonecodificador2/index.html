@@ -29,7 +29,7 @@
     </header>
     
     <main>
-        <!--Botones -->
+        <!--Sección de ingreso -->
         <section>
             <textarea type="text" class="txt-entrada" placeholder="Ingrese el texto aquí"></textarea>
             <div class="caja-aviso">
@@ -41,11 +41,11 @@
                 <button type="button" class="btn-desencriptar">Desencriptar</button>
             </div>
         </section>
-        <!-- Mensaje no encontrado-->
+        <!-- Sección de salida -->
         <section class="rectangulo">
-            <div class="caja-no-encontrado">
+            <div class="caja-salida">
                 <img class= "img-munieco" src="./img/Muñeco.svg" alt="Muñeco desencriptador">
-                <textarea type="text" class="txt-salida">Ningún mensaje fue encontrado</textarea>
+                <textarea type="text" class="txt-salida" readonly="">Ningún mensaje fue encontrado</textarea>
                 <p class="parrafo-munieco" id="ocultar">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
             <div class="copiar">
@@ -61,6 +61,6 @@
 
     <!-- Vínculo a JS -->
     <script src="encriptador.js"></script>
-
+    
 </body>
 </html>

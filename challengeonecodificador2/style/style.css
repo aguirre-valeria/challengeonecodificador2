@@ -37,7 +37,7 @@ header {
     border-radius: 32px;
 }
 
-.caja-no-encontrado {
+.caja-salida {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -175,8 +175,8 @@ header {
 
 .txt-entrada { 
     position: absolute;
-    width: 343px;
-    height: 280px;
+    width: 338px;
+    max-height: 280px;
     left: 16px;
     top: 152px;
     resize: none;
@@ -244,7 +244,7 @@ footer {
         top: 845px;
     }
 
-    .caja-no-encontrado {
+    .caja-salida {
         width: 624px;
         height: 69px;
     }
@@ -281,10 +281,11 @@ footer {
     }
 
     .txt-entrada { 
-        width: 688px;
+        width: 670px;
         height: 48px;
         left: 40px;
         top: 240px;
+        max-height: 390px;
     }
 
     .btn-copiar {
@@ -307,7 +308,7 @@ footer {
         top: 40px;
     }
     
-    .caja-no-encontrado {
+    .caja-salida {
         width: 336px;
         height: 122px;
         left: 1032px;
@@ -354,10 +355,11 @@ footer {
     }
     
     .txt-entrada { 
-        width: 577px;
+        width: 655px;
         height: 48px;
         left: 240px;
         top: 168px;
+        max-height: 628px;
     }
     
     .btn-copiar {
